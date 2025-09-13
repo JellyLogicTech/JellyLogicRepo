@@ -1,0 +1,30 @@
+
+/* Knowledge HTML shared styles moved from inline attributes */
+.solution-header { text-align:center; margin-bottom:24px; }
+.solution-header h2 { font-size:26px; font-weight:700; text-shadow:0 0 20px rgba(102,126,234,.5); }
+.solution-header p { opacity:.8; }
+
+
+
+/* Extracted from knowledge.ts */
+.packages-container{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:32px }
+      .package-item{ background:rgba(255,255,255,.02); backdrop-filter: blur(10px); border:2px solid transparent; border-radius:16px; padding:24px; position:relative; transition:.3s; overflow:hidden; }
+      .package-item::before{ content:''; position:absolute; top:0; left:0; right:0; height:4px; background: linear-gradient(90deg, var(--pkg) 0%, var(--pkgl) 100%) }
+      .package-item:hover{ transform: translateY(-4px); box-shadow: 0 12px 32px rgba(102,126,234,.2); border-color: var(--pkg); background: rgba(255,255,255,.05); }
+      .package-item.basic{ --pkg:#95a5a6; --pkgl:#bdc3c7 }
+      .package-item.growth{ --pkg:#3498db; --pkgl:#5dade2; border-color: rgba(52,152,219,.2); background: rgba(52,152,219,.02) }
+      .package-item.pro{ --pkg:#667eea; --pkgl:#9b59b6; border-color: rgba(102,126,234,.2); background: rgba(102,126,234,.03) }
+      .package-badge{ position:absolute; top:12px; right:12px; background: var(--pkg); color:white; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.5px }
+      .package-title{ font-size:20px; font-weight:700; margin-bottom:8px }
+      .package-description{ color:rgba(255,255,255,.8); min-height:54px; margin-bottom:14px }
+      .metrics-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; background:rgba(255,255,255,.02); padding:10px; border-radius:8px }
+      .metric-label{ font-size:10px; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.5px }
+      .metric-value{ font-size:16px; font-weight:600; color:var(--pkg) }
+      .tools-label{ font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase; margin-bottom:8px; font-weight:600 }
+      .tool-row{ display:flex; align-items:center; gap:8px; margin:6px 0; color:rgba(255,255,255,.9) }
+      .tool-icon{ width:20px; height:20px; background:var(--pkg); border-radius:999px; display:flex; align-items:center; justify-content:center }
+      .tool-icon svg{ width:12px; height:12px; stroke:white; stroke-width:2; fill:none }
+      .ai-section{ background: rgba(102,126,234,.05); border:1px solid rgba(102,126,234,.1); padding:10px; border-radius:8px; margin:10px 0 }
+      .benefit-section{ background: rgba(76,175,80,.1); border:1px solid rgba(76,175,80,.2); padding:10px; border-radius:8px }
+      .package-cta{ margin-top:14px; width:100%; padding:12px; background:var(--pkg); color:white; border:none; border-radius:8px; font-weight:700 }
+      @media (max-width: 1024px){ .packages-container{ grid-template-columns: 1fr } }
