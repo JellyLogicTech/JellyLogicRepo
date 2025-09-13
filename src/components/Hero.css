@@ -1,0 +1,14 @@
+/* Hero: animated gradient title */
+.slogan-grad {
+  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease-in-out infinite;
+  text-shadow: 0 0 40px rgba(102,126,234,.3);
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}

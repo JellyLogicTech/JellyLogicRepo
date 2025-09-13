@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ Background & Grid ============ */
+.holo-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(125deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+.holo-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image:
+    linear-gradient(rgba(102, 126, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 126, 234, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridFloat 20s linear infinite;
+}
+@keyframes gridFloat {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* ============ Geo Lines ============ */
+.geo-line {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102,126,234,.5), transparent);
+  opacity: .1;
+  animation: lineGlow 8s ease-in-out infinite;
+}
+.geo-line:nth-child(1) { top: 20%; animation-delay: 0s; }
+.geo-line:nth-child(2) { top: 40%; animation-delay: 2s; }
+.geo-line:nth-child(3) { top: 60%; animation-delay: 4s; }
+.geo-line:nth-child(4) { top: 80%; animation-delay: 6s; }
+
+@keyframes lineGlow {
+  0%, 100% { opacity: .1; transform: scaleX(.5); }
+  50% { opacity: .3; transform: scaleX(1); }
+}
+
+/* ============ Small Utilities ============ */
+.fade-in-up { animation: fadeUp .8s ease forwards; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ripple click effect */
+.ripple {
+  position: fixed;
+  border-radius: 9999px;
+  border: 1px solid rgba(102,126,234,.6);
+  transform: scale(0);
+  pointer-events: none;
+  animation: rippleExpand .4s ease-out;
+  width: 12px;
+  height: 12px;
+}
+@keyframes rippleExpand {
+  to { transform: scale(6); opacity: 0; }
+}
+
+/* For <i class="fa-..."> icons injected in HTML blocks */
+.ai-label i {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: -3px;
+}
